@@ -43,12 +43,10 @@ func jira(w http.ResponseWriter, r *http.Request) {
 
     response := &SlackResponse {
         ResponseType: "in_channel",
-        Text: message,
     }
     tickets := regex.FindAllString(message, -1)
     for i := 0; i < len(tickets); i++ {
         link := fmt.Sprintf("%s: %s%s", tickets[i], jiraPath, tickets[i])
-        fmt.Println(link)
         attachment := make(map[string]interface{})
         attachment["text"] =  link
         response.Attachments = append(response.Attachments, attachment)
