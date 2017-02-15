@@ -19,6 +19,7 @@ type SlackResponse struct {
 }
 
 func jira(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
     token := r.FormValue("token")
     command := r.FormValue("command")
     message := r.FormValue("text")
