@@ -11,7 +11,7 @@ import (
 var MAX_ATTACHMENTS = 20
 
 var slackToken = "FlMln4NEv5xTGc0czw9NKvQ9"
-var regex = regexp.MustCompile("[A-Za-z]+-\\d+")
+var regex = regexp.MustCompile("[A-Za-z0-9]+-\\d+")
 var jiraPath = "http://jira.indexexchange.com/browse/"
 
 type SlackResponse struct {
